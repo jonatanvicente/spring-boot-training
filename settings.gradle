@@ -1,3 +1,5 @@
 rootProject.name = 'spring-boot-training'
 include 'spring-boot-initial'
+include 'spring-boot-one-to-one'
+include 'spring-boot-one-to-many'
 
