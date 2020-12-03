@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@ComponentScan(basePackages = {"springBootInitialDemo"})
+@ComponentScan(basePackages = {"springBootInitial"})
 @Configuration
 @EnableWebMvc
 public class WebMVCConfiguration extends WebMvcConfigurerAdapter {
