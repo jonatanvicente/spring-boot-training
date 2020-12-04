@@ -43,5 +43,5 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = 'onetoone.App'
+    mainClassName = 'com.training.onetoone.App'
 }
