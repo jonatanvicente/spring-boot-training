@@ -44,5 +44,5 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = 'springBootActuator.App'
+    mainClassName = 'com.training.springbootinitial.App'
 }
