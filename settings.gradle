@@ -7,4 +7,5 @@ include 'spring-boot-registry:eureka-service'
 findProject(':spring-boot-registry:eureka-service')?.name = 'eureka-service'
 include 'spring-boot-registry:eureka-client'
 findProject(':spring-boot-registry:eureka-client')?.name = 'eureka-client'
+include 'spring-boot-gateway'
 
