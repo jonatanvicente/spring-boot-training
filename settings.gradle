@@ -8,4 +8,8 @@ findProject(':spring-boot-registry:eureka-service')?.name = 'eureka-service'
 include 'spring-boot-registry:eureka-client'
 findProject(':spring-boot-registry:eureka-client')?.name = 'eureka-client'
 include 'spring-boot-gateway'
+include 'spring-boot-routing-filtering:book'
+findProject(':spring-boot-routing-filtering:book')?.name = 'book'
+include 'spring-boot-routing-filtering:gateway'
+findProject(':spring-boot-routing-filtering:gateway')?.name = 'gateway'
 
