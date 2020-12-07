@@ -6,6 +6,11 @@ Ejecutar 1º eureka-service y después eureka-client.
 ##### Funcionamiento
 Al iniciar <b>eureka-service</b> se inicia el Registry. Al arrancar <b>eureka-client</b>, el microservicio se registra,
 tal como lo muestra la consola de Eureka Service (con General Info, Instance Info, etc).
+Client-side service discovery allows services to find and communicate with each other without hard-coding hostname and port.
+El único 'fixed point' (punto fijo) es el registry donde cada servicio se registra.
+Al utilizar Neflix Eureka:
++ Cada cliente obtiene una lista de pares conectados al registry y realiza las peticiones a otros servicios sobre un
+algoritmo de balanceo de carga.
 
 ## Eureka Service
 
