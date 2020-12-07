@@ -7,7 +7,7 @@ To run this example:
 + Execute with command (from parent directory):
 
 ```
-./gradlew OneToOne:bootRun
+./gradlew :spring-boot-one-to-one:bootRun
 ```
 
 + Endpoints available:
