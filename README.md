@@ -7,3 +7,4 @@ Sample Modules:
 - [Spring Boot One-To-Many](spring-boot-one-to-many/README.md)
 - [Spring Boot Actuator](spring-boot-actuator/README.md)
 - [Spring Boot Registry](spring-boot-registry/README.md)
+- [Spring Boot Gateway](spring-boot-gateway/README.md)
