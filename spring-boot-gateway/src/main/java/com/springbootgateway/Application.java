@@ -48,8 +48,8 @@ public class Application {
                         .filters(f -> f.addRequestHeader("Spring", "Training"))
                         .uri(httpUri))
                 .route(p -> p
-                        .host("*.hystrix.com") //se envolverá la petición con un circuit breaker siempre que sea el mismo host
-                        .filters(f -> f.hystrix(config -> config
+                        .host("*.hystrix.com") //SIEMPRE que el anfitrión (host) sea hystrix.com, enrutaremos a httpUri
+                        .filters(f -> f.hystrix(config -> config //y envolveremos esa solicitud en un HystrixCommand
                                        .setName("mycmd")
                                        .setFallbackUri("forward:/fallback")))//proveemos una respuesta en caso de timeout
                         .uri(httpUri))

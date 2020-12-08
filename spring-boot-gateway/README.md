@@ -44,8 +44,14 @@ Pasados unos segundos, https<nolink>://httpbin.org/ responde. Response:
   "url": "http://localhost:9999/get"
 }
 ```
-+ Si forzamos una demora en la petición al host (pasando por Gateway), salta el FallbackUri añadido en los filtros de 
-ruta (circuit breaker). Al ejecutar
++ <b>Podemos usar Hystrix para envolver las rutas que creamos en circuit breakers</b>. Podemos utilizar filtros simples para 
+ello.Si hacemos la petición a http:<nolink>//httpbin.org/delay/3 forzamos una demora en respuesta a la petición de 3 segundos (url 
+de pruebas). Fijamos como anfitrión (host) hystrix para que se enrute bien a https<nolink>://httpbin.org/ (según está
+el filtro en Gateway). Al producirse la demora en respuesta, en Gateway salta el FallbackUri añadido en el filtro de 
+ruta (circuit breaker). 
+
+
+Al ejecutar
 ```
 curl --dump-header - --header 'Host: www.hystrix.com' http://localhost:9999/delay/3
 ```
