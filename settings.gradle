@@ -12,4 +12,5 @@ include 'spring-boot-routing-filtering:book'
 findProject(':spring-boot-routing-filtering:book')?.name = 'book'
 include 'spring-boot-routing-filtering:gateway'
 findProject(':spring-boot-routing-filtering:gateway')?.name = 'gateway'
+include 'spring-boot-docker'
 
