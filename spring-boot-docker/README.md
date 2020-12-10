@@ -44,6 +44,8 @@ docker-compose up
 #### Comandos Docker útiles
 
 + docker images ls
++ docker ps -all
++ docker run hello-world (test de instalacion)
 + docker container ls
 + docker build --tag=[myTag] .
 + docker stop [containerId]
