@@ -8,3 +8,4 @@ Sample Modules:
 - [Spring Boot Actuator](spring-boot-actuator/README.md)
 - [Spring Boot Registry](spring-boot-registry/README.md)
 - [Spring Boot Gateway](spring-boot-gateway/README.md)
+- [Spring Boot Docker](spring-boot-docker/README.md)
