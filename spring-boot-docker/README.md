@@ -30,9 +30,9 @@ docker run -it -p 7777:8080 spring-boot-training
 docker-compose up
 ```
 
-+ Endpoints available:
-    - GET http://[IP]:7777/v1/test
-    - GET http://[IP]:7777/v1/user/{name}/{surname}/{gender}
++ Endpoints available (dockerPort:7777 - springBootPort:8090):
+    - GET http://[IP]:7777/springbootdocker/v1/test
+    - GET http://[IP]:7777/springbootdocker/v1/user/{name}/{surname}/{gender}
 
 + Swagger endpoints:
     - http:<nolink>//localhost:8080/v2/api-docs
@@ -44,6 +44,7 @@ docker-compose up
 
 + Files Dockerfile y docker-compose.yml
 + Mapeo de puertos host/container
++ Configuración en application.properties con cambio de puerto del server y context-path
 
 #### Comandos Docker útiles
 

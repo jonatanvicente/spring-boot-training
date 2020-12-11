@@ -6,7 +6,7 @@ services:
     container_name: springboottrainingdocker
     restart: "no"
     ports:
-      - "7777:8080"
+      - "7777:8090"
     environment:
       - "JAVA_OPTS=-Xms128m -Xmx512m -server"
     mem_limit: 512000000
