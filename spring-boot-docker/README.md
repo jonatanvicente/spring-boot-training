@@ -47,6 +47,7 @@ docker-compose up
 + Mapeo de puertos host/container
 + Configuración en application.properties con cambio de puerto del server y context-path
 + Utilización de Swagger UI
++ <b>La base de datos no está creada</b (Adminer no deja acceder)
 
 #### Comandos Docker útiles
 
