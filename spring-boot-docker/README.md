@@ -34,6 +34,10 @@ docker-compose up
     - GET http://[IP]:7777/v1/test
     - GET http://[IP]:7777/v1/user/{name}/{surname}/{gender}
 
++ Swagger endpoints:
+    - http:<nolink>//localhost:8080/v2/api-docs
+    - http:<nolink>//localhost:8080/swagger-resources/
+    - http:<nolink>//localhost:8080/swagger-resources/configuration/ui
 
 
 #### Highlights
