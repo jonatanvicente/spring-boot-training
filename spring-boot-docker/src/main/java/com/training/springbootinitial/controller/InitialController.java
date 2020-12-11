@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.*;
+import springfox.documentation.annotations.ApiIgnore;
 
+@Api(value = "Spring Boot Docker API", tags = {"Users"})
 @RestController
 @RequestMapping("/v1")
 public class InitialController {
@@ -22,13 +24,15 @@ public class InitialController {
         this.userService = userService;
     }
 
-    @ApiOperation(value = "Test service. You can call this to check whether the API is running or not.", tags = "Test")
+    //Si deseamos evitar la aparición de algún endpoint en SwaggerUI...
+    //@ApiIgnore
+    @ApiOperation(value = "Test service. You can call this to check whether the API is running or not.", tags = "Controller Smoke Test")
     @GetMapping("/test")
     public String test() {
         return "Test Passed!!";
     }
 
-    @ApiOperation(value = "User service. Example that shows how to receive params sent", tags = "Params")
+    @ApiOperation(value = "User service. Example that shows how to receive params sent.", tags = "Get User")
     @GetMapping("/user/{name}/{surname}/{gender}")
     public ResponseEntity<UserResponseDto> updatePrescription(
             @ApiParam(name = "name", value = "Name", required = true)

@@ -31,13 +31,14 @@ docker-compose up
 ```
 
 + Endpoints available (dockerPort:7777 - springBootPort:8090):
-    - GET http://[IP]:7777/springbootdocker/v1/test
-    - GET http://[IP]:7777/springbootdocker/v1/user/{name}/{surname}/{gender}
+    - GET http://[IP]:[PORT]/springbootdocker/v1/test
+    - GET http://[IP]:[PORT]/springbootdocker/v1/user/{name}/{surname}/{gender}
 
 + Swagger endpoints:
-    - http:<nolink>//localhost:8080/v2/api-docs
-    - http:<nolink>//localhost:8080/swagger-resources/
-    - http:<nolink>//localhost:8080/swagger-resources/configuration/ui
+    - http:<nolink>//localhost:[PORT]/springbootdocker/swagger-ui.html
+    - http:<nolink>//localhost:[PORT]/v2/api-docs
+    - http:<nolink>//localhost:[PORT]/swagger-resources/
+    - http:<nolink>//localhost:[PORT]/springbootdocker/swagger-resources/configuration/ui
 
 
 #### Highlights
@@ -45,6 +46,7 @@ docker-compose up
 + Files Dockerfile y docker-compose.yml
 + Mapeo de puertos host/container
 + Configuración en application.properties con cambio de puerto del server y context-path
++ Utilización de Swagger UI
 
 #### Comandos Docker útiles
 
