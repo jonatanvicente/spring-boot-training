@@ -21,7 +21,7 @@ Procedimiento del ejemplo:
 ```
 ./gradlew :spring-boot-zuul-load-balancing:zuul-server:bootRun
 ```
-    + Podemos ver el registro de Zuul en Eureka
++ Podemos ver el registro de Zuul en Eureka
 + Arrancamos eureka-client
 ```
 ./gradlew :spring-boot-zuul-load-balancing:eureka-client:bootRun

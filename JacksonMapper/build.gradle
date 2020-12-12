@@ -10,4 +10,4 @@ dependencies {
 
 }
 
-mainClassName = 'org.javaTips.jackson.annotation.Main'
+mainClassName = 'com.springboot.jacksonmapper.annotation.App'
