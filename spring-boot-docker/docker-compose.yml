@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   springbootdocker:
@@ -10,7 +10,6 @@ services:
       - "7777:8090"
     environment:
       - "JAVA_OPTS=-Xms128m -Xmx512m -server"
-    mem_limit: 512000000
     logging:
       driver: "json-file"
       options:
@@ -22,27 +21,35 @@ services:
     image: mysql
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: kIFQRsP8BRpODROvy5
       MYSQL_DATABASE: spring_boot_mysql_db
       MYSQL_USER: admin
       MYSQL_PASSWORD: Sb13TU7hw1oCbSIJ
     volumes:
-      - /home/Jonatan/projects/IntelliJ_projects/spring-boot-training/spring-boot-docker/src/main/resources/scripts:/home/
-      #- springbootdb_mysql_db_data:/var/lib/mysql
-      #- springbootdb_vol_mysql_log:/var/log/mysql
+      - /home/Jonatan/projects/IntelliJ_projects/spring-boot-training/spring-boot-docker/src/main/resources/scripts-mysql:/home/
+      - springbootdb_mysql_db_data:/var/lib/mysql
+      - springbootdb_vol_mysql_log:/var/log/mysql
 
   adminer:
-      container_name: adminer
-      image: adminer
-      restart: always
-      ports:
-        - 9090:8080
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - "9090:8080"
 
+  portainer:
+    container_name: portainer
+    image: portainer/portainer
+    ports:
+      - "9500:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
 
-
-
-  #volumes:
-    #springbootdb_mysql_db_data:
+volumes:
+    springbootdb_mysql_db_data:
+    springbootdb_vol_mysql_log:
+    portainer_data:
 
