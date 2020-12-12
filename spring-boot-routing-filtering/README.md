@@ -4,7 +4,7 @@
 
 ##### Funcionamiento
 
-Se puede apreciar el enrutamiento correcto al microservicio pasando por Gateway
+Se puede apreciar el enrutamiento correcto al microservicio pasando por Gateway, añadiendo filtro.
 
 #### Book Service
 

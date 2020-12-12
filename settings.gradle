@@ -19,4 +19,5 @@ include 'spring-boot-zuul-load-balancing:eureka-client'
 findProject(':spring-boot-zuul-load-balancing:eureka-client')?.name = 'eureka-client'
 include 'spring-boot-zuul-load-balancing:eureka-service'
 findProject(':spring-boot-zuul-load-balancing:eureka-service')?.name = 'eureka-service'
+include 'JacksonMapper'
 
