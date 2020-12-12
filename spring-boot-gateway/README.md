@@ -4,6 +4,7 @@
 ##### Funcionamiento
 
 Se enrutan todas las peticiones a /GET a https<nolink>://httpbin.org/ (mock). Se añade cabecera al enrutar.
+<b>Hystrix</b> es una librería para la gestión de errores en cascada que utiliza el patrón <b>circuit breaker</b>.
 
 To run this example:
 + Generate Gradle wrapper (parent directory)
