@@ -1,7 +1,6 @@
-package com.training.springbootinitial.configuration;
+package com.training.today.configuration;
 
 
-import com.training.springbootinitial.dto.UserResponseDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -22,7 +21,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.training.springbootinitial.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.training.today.controller"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 //.ignoredParameterTypes(UserResponseDto.class)//evitamos aparición de model en Swagger-UI
@@ -31,7 +30,7 @@ public class SwaggerConfiguration {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Spring Boot Docker API",
+                "Spring Boot Today API",
                 "Some custom description of API.",
                 "1.0",
                 "Terms of service",

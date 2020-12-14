@@ -3,7 +3,7 @@ version: "3"
 services:
   springbootdocker:
     build: ./
-    image: spring-boot-training
+    image: spring-boot-training-docker
     container_name: springboottrainingdocker
     restart: "no"
     ports:
