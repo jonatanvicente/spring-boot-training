@@ -24,4 +24,5 @@ include 'spring-boot-security-oauth:jwt-auth-server'
 findProject(':spring-boot-security-oauth:jwt-auth-server')?.name = 'jwt-auth-server'
 include 'spring-boot-security-oauth:jwt-resource-server'
 findProject(':spring-boot-security-oauth:jwt-resource-server')?.name = 'jwt-resource-server'
+include 'spring-boot-today'
 
