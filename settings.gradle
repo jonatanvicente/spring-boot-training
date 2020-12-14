@@ -20,4 +20,8 @@ findProject(':spring-boot-zuul-load-balancing:eureka-client')?.name = 'eureka-cl
 include 'spring-boot-zuul-load-balancing:eureka-service'
 findProject(':spring-boot-zuul-load-balancing:eureka-service')?.name = 'eureka-service'
 include 'JacksonMapper'
+include 'spring-boot-security-oauth:jwt-auth-server'
+findProject(':spring-boot-security-oauth:jwt-auth-server')?.name = 'jwt-auth-server'
+include 'spring-boot-security-oauth:jwt-resource-server'
+findProject(':spring-boot-security-oauth:jwt-resource-server')?.name = 'jwt-resource-server'
 
