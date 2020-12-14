@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  springbootdocker:
+    build: ./
+    image: spring-boot-training-today
+    container_name: springboottrainingdockertoday
+    restart: "no"
+    ports:
+      - "7080:7777"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
