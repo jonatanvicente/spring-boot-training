@@ -1,3 +1,7 @@
+DROP SCHEMA IF EXISTS USAirlineFlights2;
+CREATE DATABASE IF NOT EXISTS USAirlineFlights2;
+use USAirlineFlights2;
+
 DROP TABLE IF EXISTS USAirports;
 create table USAirports
 (

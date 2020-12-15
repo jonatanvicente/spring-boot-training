@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  springbootonetomany:
+    build: ./
+    image: spring-boot-training-one-to-many
+    container_name: springboottrainingonetomany
+    restart: "no"
+    ports:
+      - "7777:8081"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
+  mysql:
+    container_name: mysql-master-one-to-many
+    image: mysql
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: kIFQRsP8BRpODROvy5
+      MYSQL_DATABASE: USAirlineFlights2
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: Sb13TU7hw1oCbSIJ
+    volumes:
+      - /home/Jonatan/projects/IntelliJ_projects/spring-boot-training/spring-boot-one-to-many/src/main/resources/scripts-mysql:/home/scripts/
+      - springbootdb_mysql_db_data:/var/lib/mysql
+      - springbootdb_vol_mysql_log:/var/log/mysql
+
+volumes:
+    springbootdb_mysql_db_data:
+    springbootdb_vol_mysql_log:
+    portainer_data:
+
