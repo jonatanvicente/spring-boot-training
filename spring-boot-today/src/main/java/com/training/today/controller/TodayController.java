@@ -30,16 +30,24 @@ public class TodayController {
     @ApiOperation(value = "You can call this to get date", tags = "Get Date")
     @GetMapping("/today")
     public ResponseEntity<String> getToday(){
-        return new ResponseEntity<>(todayService.getToday(), HttpStatus.OK);
+        return new ResponseEntity<>(todayService.getTodaySimple(), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "You can call this to get date in JSON format", tags = "Get Date")
+    @ApiOperation(value = "You can call this to get today's date in JSON format", tags = "Get Today's Date")
     @GetMapping("/todayJson")
     public ResponseEntity<TodayJson> getTodayJson(){
         return new ResponseEntity<TodayJson>(todayService.getTodayObject(), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "You can call this to get date in JSON format", tags = "Get Date")
+    /**
+     * Input Format example:
+     *      {
+     *     "pattern": "dd/MM/yyyy HH:mm:ss"
+     *      }
+     * @param pattern
+     * @return
+     */
+    @ApiOperation(value = "You can call this to get today's date in JSON format", tags = "Get Today's Date")
     @GetMapping("/todayJsonParameterized")
     public ResponseEntity<TodayJson> getTodayJsonWithParam(@RequestBody TodayPattern pattern){
         return new ResponseEntity<TodayJson>(todayService.getTodayParameterized(pattern), HttpStatus.OK);

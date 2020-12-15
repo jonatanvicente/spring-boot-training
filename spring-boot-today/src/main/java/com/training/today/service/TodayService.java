@@ -17,25 +17,25 @@ public class TodayService {
 
     private final String DEFAULT_PATTERN = "dd/MM/yy HH:mm:ss";
 
-    public String getToday(){
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DEFAULT_PATTERN);
-        LocalDateTime now = LocalDateTime.now();
-        return dtf.format(now);
+    public String getTodaySimple(){
+        return getToday(DEFAULT_PATTERN);
     }
 
     public TodayJson getTodayObject(){
-        todayJson.setToday(getToday());
+        todayJson.setToday(getToday(DEFAULT_PATTERN));
         return todayJson;
     }
 
     public TodayJson getTodayParameterized(TodayPattern pattern){
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern.getPattern());
-        LocalDateTime now = LocalDateTime.now();
-        todayJson.setToday(dtf.format(now));
+        todayJson.setToday(getToday(pattern.getPattern()));
         return todayJson;
     }
 
+    private String getToday(String pattern){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
 
 }
