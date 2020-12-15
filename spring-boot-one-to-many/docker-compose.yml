@@ -35,5 +35,4 @@ services:
 volumes:
     springbootdb_mysql_db_data:
     springbootdb_vol_mysql_log:
-    portainer_data:
 

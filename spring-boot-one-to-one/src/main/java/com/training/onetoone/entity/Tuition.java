@@ -43,4 +43,12 @@ public class Tuition implements Serializable {
     public void setFee(Double fee) {
         this.fee = fee;
     }
+
+/*    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }*/
 }

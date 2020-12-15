@@ -1,3 +1,4 @@
+USE USAirlineFlights2;
 INSERT INTO USAirports (IATA, Airport, City, State, Country, Latitude, Longitude) VALUES ('00M', 'Thigpen ', 'Bay Springs', 'MS', 'USA', 31.9538, -89.2345);
 INSERT INTO USAirports (IATA, Airport, City, State, Country, Latitude, Longitude) VALUES ('00R', 'Livingston Municipal', 'Livingston', 'TX', 'USA', 30.6859, -95.0179);
 INSERT INTO USAirports (IATA, Airport, City, State, Country, Latitude, Longitude) VALUES ('00V', 'Meadow Lake', 'Colorado Springs', 'CO', 'USA', 38.9457, -104.57);
