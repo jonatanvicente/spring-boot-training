@@ -14,3 +14,8 @@
 #### Comandos útiles
 
 + docker container prune
++ docker-compose up [nombreServicio]. Levanta un sólo servicio de docker-compose.yml
+
+### TO-DO
+
+* Pte asignar un user NO root (application.properties)
