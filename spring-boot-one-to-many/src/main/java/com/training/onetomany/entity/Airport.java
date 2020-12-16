@@ -2,6 +2,7 @@ package com.training.onetomany.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USAirports")
@@ -18,6 +19,17 @@ public class Airport {
     private String city;
     @Column(name="State")
     private String state;
+
+    @OneToMany(mappedBy = "flightId",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Flight> flights;
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
+    }
 
 
     public String getIata() {
@@ -51,4 +63,5 @@ public class Airport {
     public void setState(String state) {
         this.state = state;
     }
+
 }
