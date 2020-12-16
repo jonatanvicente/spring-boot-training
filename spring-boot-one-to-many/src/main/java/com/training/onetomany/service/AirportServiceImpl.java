@@ -14,7 +14,7 @@ public class AirportServiceImpl {
     @Autowired
     private IAirportRepository repository;
 
-    public List<Airport> getAllStudents(){
+    public List<Airport> getAllAirports(){
         return repository.findAll();
     }
 

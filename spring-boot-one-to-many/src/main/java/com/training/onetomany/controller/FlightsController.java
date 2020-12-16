@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FlightsController {
@@ -24,9 +25,17 @@ public class FlightsController {
 
 
     @RequestMapping(value = "/airport/all", method = RequestMethod.GET)
-    public ResponseEntity<List<Airport>> types() {
-        List<Airport> airports = service.getAllStudents();
+    public ResponseEntity<List<Airport>> getAllAirports() {
+        List<Airport> airports = service.getAllAirports();
         return airports == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(airports);
+    }
+
+    @RequestMapping(value = "/airport/departures", method = RequestMethod.GET)
+    public ResponseEntity<Airport> getOriginInfo() {
+
+        //TODO - falta capturar el parámetro....
+        Optional<Airport> airport = service.findAirport("HOU");
+        return ResponseEntity.ok(airport.get());
     }
 
 }

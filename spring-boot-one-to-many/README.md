@@ -16,6 +16,11 @@
 + docker container prune
 + docker-compose up [nombreServicio]. Levanta un sólo servicio de docker-compose.yml
 
-### TO-DO
 
-* Pte asignar un user NO root (application.properties)
+#### Highlights
++ Relación unidireccional one-to-many Airport-Flights (departures de cada airport y filtrado por airport) unidireccional
+
+
+### TO-DO
+* Pte asignar un user NO root a DB (application.properties)
++ Capturar el parámetro en endpoint /airport/departures.

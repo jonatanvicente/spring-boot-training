@@ -20,7 +20,7 @@ public class Airport {
     @Column(name="State")
     private String state;
 
-    @OneToMany(mappedBy = "flightId",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "origin",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Flight> flights;
 
     public List<Flight> getFlights() {
@@ -30,7 +30,6 @@ public class Airport {
     public void setFlights(List<Flight> flights) {
         this.flights = flights;
     }
-
 
     public String getIata() {
         return iata;
