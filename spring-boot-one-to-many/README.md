@@ -1,8 +1,6 @@
 
 ### One-To-Many Example
 
-
-
 #### Creación de DB en container
 
 + Entramos en mysql dentro de container
@@ -12,7 +10,7 @@
 
 
 #### Comandos útiles
-
+    
 + docker container prune
 + docker-compose up [nombreServicio]. Levanta un sólo servicio de docker-compose.yml
 
@@ -23,4 +21,3 @@
 
 ### TO-DO
 * Pte asignar un user NO root a DB (application.properties)
-+ Capturar el parámetro en endpoint /airport/departures.

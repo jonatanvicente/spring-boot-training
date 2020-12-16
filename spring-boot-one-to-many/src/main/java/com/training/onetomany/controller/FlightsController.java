@@ -5,6 +5,7 @@ import com.training.onetomany.entity.Airport;
 import com.training.onetomany.service.AirportServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,12 +31,19 @@ public class FlightsController {
         return airports == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(airports);
     }
 
-    @RequestMapping(value = "/airport/departures", method = RequestMethod.GET)
-    public ResponseEntity<Airport> getOriginInfo() {
+    @RequestMapping(value = "/airport/departures/{airport}", method = RequestMethod.GET)
+    public ResponseEntity<Airport> getOriginInfo(@PathVariable(name="airport") String airport) {
 
-        //TODO - falta capturar el parámetro....
-        Optional<Airport> airport = service.findAirport("HOU");
-        return ResponseEntity.ok(airport.get());
+        Optional<Airport> result = service.findAirport(airport.toUpperCase());
+
+        if(result.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(result.get());
+
+
+
     }
 
 }
