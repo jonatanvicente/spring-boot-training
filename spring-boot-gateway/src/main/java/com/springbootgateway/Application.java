@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Application {
 
-    final String httpUri = "http://httpbin.org:80";//stub
+    //final String httpUri = "http://httpbin.org:80";//stub
+    final String httpUri = "http://localhost:7777";//stub
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -44,7 +45,7 @@ public class Application {
 
         return builder.routes()
                 .route(p -> p
-                        .path("/get")
+                        .path("/v1/*")
                         .filters(f -> f.addRequestHeader("Spring", "Training"))
                         .uri(httpUri))
                 .route(p -> p
