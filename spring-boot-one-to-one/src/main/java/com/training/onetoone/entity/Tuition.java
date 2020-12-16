@@ -44,11 +44,4 @@ public class Tuition implements Serializable {
         this.fee = fee;
     }
 
-/*    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }*/
 }
