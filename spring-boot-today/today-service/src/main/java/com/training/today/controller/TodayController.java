@@ -35,6 +35,10 @@ public class TodayController {
     @ApiOperation(value = "You can call this to get today's date in JSON format", tags = "Get Today's Date")
     @GetMapping("/todayJson")
     public ResponseEntity<TodayJson> getTodayJson(){
+
+        try {
+            Thread.sleep(3000); //tests con gateway
+        }catch(InterruptedException ie){ System.out.println(ie.getMessage());}
         return new ResponseEntity<TodayJson>(todayService.getTodayObject(), HttpStatus.OK);
     }
 

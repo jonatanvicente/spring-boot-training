@@ -45,15 +45,16 @@ public class Application {
 
         return builder.routes()
                 .route(p -> p
-                        //.path("/v1/*")
+                        //.path("/v1/*")//otros patrones
                         .path("/get")
                         .filters(f -> f.addRequestHeader("Spring", "Training"))
                         .uri(httpUri))
                 .route(p -> p
                         .host("*.hystrix.com") //SIEMPRE que el anfitrión (host) sea hystrix.com, enrutaremos a httpUri
                         .filters(f -> f.hystrix(config -> config //y envolveremos esa solicitud en un HystrixCommand
-                                       .setName("mycmd")
-                                       .setFallbackUri("forward:/fallback")))//proveemos una respuesta en caso de timeout
+                                .setName("mycmd")
+                                .setFallbackUri("forward:/fallback")))//proveemos una respuesta en caso de timeout
+                        //.setFallbackUri("forward:"+httpUri + "/get")))//si queremos redireccionar de nuevo a otra url...
                         .uri(httpUri))
                 .build();
     }

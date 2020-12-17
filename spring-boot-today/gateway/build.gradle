@@ -1,30 +1,16 @@
-buildscript {
-    ext {
-        springBootPlugin = 'org.springframework.boot:spring-boot-gradle-plugin'
-        springBootVersion = '2.0.2.RELEASE'
-        thinPlugin = 'org.springframework.boot.experimental:spring-boot-thin-gradle-plugin'
-        thinVersion = '1.0.11.RELEASE'
-        swaggerVersion = '2.9.2'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("${springBootPlugin}:${springBootVersion}")
-        classpath("${thinPlugin}:${thinVersion}")
-    }
+plugins {
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
+group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
 }
 
 ext {
@@ -34,13 +20,12 @@ ext {
 dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-gateway")
     compile("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework:spring-tx')
-    compile('org.springframework:spring-webmvc')
-    compile('org.springframework.data:spring-data-jpa')
-    compile("io.springfox:springfox-swagger2:$swaggerVersion")
-    compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.cloud:spring-cloud-starter-contract-stub-runner"){
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-web"
+    }
+    // JAX-B dependencies for JDK 9+
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.2'
 }
 
 dependencyManagement {
@@ -53,3 +38,6 @@ springBoot {
     mainClassName = 'com.training.today.gateway.App'
 }
 
+test {
+    useJUnitPlatform()
+}
