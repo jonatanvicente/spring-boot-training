@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  springbootdocker:
-    build: ./
+  todayservice:
+    build: today-service
     image: spring-boot-training-today
     container_name: springboottrainingdockertoday
     restart: "no"
