@@ -39,6 +39,17 @@ public class TodayController {
         return new ResponseEntity<TodayJson>(todayService.getTodayObject(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "You can call this to get today's date in JSON format, but delayed...", tags = "Get Today's Date")
+    @GetMapping("/todayJsonDelayed")
+    public ResponseEntity<TodayJson> getTodayJsonDelayed() {
+        try{
+            Thread.sleep(5000);
+        }catch (InterruptedException ie){
+            System.out.println(ie.getMessage());}
+        return new ResponseEntity<TodayJson>(todayService.getTodayObject(), HttpStatus.OK);
+    }
+
+
     /**
      * Input Format example:
      *      {

@@ -18,7 +18,7 @@ To run this example:
 ./gradlew :spring-boot-routing-filtering:book:bootRun
 ```
 
-#### Gateway (Edge Service)
+#### Gateway (Edge Service - Zuul Filtering)
 
 To run this example:
 

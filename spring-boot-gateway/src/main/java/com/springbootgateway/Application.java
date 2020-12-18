@@ -53,7 +53,7 @@ public class Application {
                         .host("*.hystrix.com") //SIEMPRE que el anfitrión (host) sea hystrix.com, enrutaremos a httpUri
                         .filters(f -> f.hystrix(config -> config //y envolveremos esa solicitud en un HystrixCommand
                                 .setName("mycmd")
-                                .setFallbackUri("forward:/fallback")))//proveemos una respuesta en caso de timeout, OJO Hystrix no soporta redirect
+                                .setFallbackUri("forward:/fallback")))//proveemos una respuesta (OJO Hystrix no soporta redirect)
                         //.setFallbackUri("forward:"+httpUri + "/get")))//si queremos redireccionar de nuevo a otra url en el mismo host...
                         .uri(httpUri))
                 .build();

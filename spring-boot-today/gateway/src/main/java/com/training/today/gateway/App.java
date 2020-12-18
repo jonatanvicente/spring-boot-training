@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import reactor.core.publisher.Mono;
 import wiremock.org.eclipse.jetty.servlet.FilterHolder;
 
 @SpringBootApplication
@@ -17,6 +19,24 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
+    @Bean
+    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
 
+        //configurado así, saltará timeout de la gateway
+        //No obstante, es posible configurar Hystrix para preconfigurar su timeout
+        return builder.routes()
+                .route(p -> p//circuit breaker
+                        .path("/v1/todayJsonDelayed")
+                        .filters(f -> f.hystrix(config -> config
+                                .setName("mycmd")
+                                .setFallbackUri("forward:/fallback")))//Hystrix no soporta redirect
+                        .uri("http://localhost:7777/v1/todayJsonDelayed"))
+                .build();
+    }
+
+    @RequestMapping("/fallback")
+    public Mono<String> fallback() {
+        return Mono.just("fallback");//redirect a fail -service
+    }
 
 }

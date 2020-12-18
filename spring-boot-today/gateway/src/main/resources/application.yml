@@ -13,7 +13,7 @@ spring:
   cloud:
     gateway:
       httpclient: #fijamos timeout
-        connect-timeout: 1000
+        connect-timeout: 2000
         response-timeout: 2s
       routes:
       - id: path_today_simple #Redirección
