@@ -36,9 +36,6 @@ public class TodayController {
     @GetMapping("/todayJson")
     public ResponseEntity<TodayJson> getTodayJson(){
 
-        try {
-            Thread.sleep(3000); //tests con gateway
-        }catch(InterruptedException ie){ System.out.println(ie.getMessage());}
         return new ResponseEntity<TodayJson>(todayService.getTodayObject(), HttpStatus.OK);
     }
 
@@ -54,6 +51,13 @@ public class TodayController {
     @GetMapping("/todayJsonParameterized")
     public ResponseEntity<TodayJson> getTodayJsonWithParam(@RequestBody TodayPattern pattern){
         return new ResponseEntity<TodayJson>(todayService.getTodayParameterized(pattern), HttpStatus.OK);
+    }
+
+
+    @ApiOperation(value = "Test", tags = "Test")
+    @GetMapping("/badGatewayTest")
+    public ResponseEntity<TodayJson> getBadGateway(){
+        return new ResponseEntity<>(null, HttpStatus.BAD_GATEWAY);
     }
 
 }
