@@ -3,9 +3,10 @@
 
 #### Highlights
 
-+ Fijado timeout de la Gateway en config 
++ Fijado timeout de la Gateway en config. Si fijamos redirección a /todayJsonDelayed de today-service, saltará timeout de Gateway antes.
 + Soluciones implementadas en Gateway
-    - Ruta path_today_simple (evita respuesta NO Json)
-    - Ruta path_json_parameterized (fija a forbidden una redirección)
-    - Ruta retry_test (intentos de reconectar al recibir un 502 llamando a back)
+    - Ruta path_today_simple (evita respuesta NO Json redireccionando a URL de otro microservicio)
+    - Ruta path_json_parameterized (fijamos response a forbidden)
+    - Ruta retry_test (intentos de reconectar al recibir un 502 llamando a back, hasta finalmente mostrar el estado)
+    - Hystrix no soporta redirect. Todos los forward habrán de ser en el mismo host.
      

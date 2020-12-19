@@ -21,7 +21,7 @@ spring:
         predicates:
         - Path=/v1/today
         filters:
-        - RedirectTo=302, http://localhost:7777/v1/todayJson #Format: HTTP Status 302 (Redirect) / newLocation
+        - RedirectTo=302, http://localhost:8888/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
         # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
 
       - id: path_json_parameterized #Fijamos status forbidden en esta ruta
