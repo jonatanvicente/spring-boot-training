@@ -1,0 +1,49 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+server:
+  port: 9999
+
+#Ejercicio: añadimos filtrado de rutas para permitir sólo salida en Json
+spring:
+  application:
+    name: spring-today-gateway
+  cloud:
+    gateway:
+      httpclient: #fijamos timeout
+        connect-timeout: 2000
+        response-timeout: 2s
+      routes:
+      - id: path_today_simple #Redirección
+        uri: http://localhost:9999/
+        predicates:
+        - Path=/v1/today
+        filters:
+        - RedirectTo=302, http://localhost:8888/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
+        # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
+
+      - id: path_json_parameterized #Fijamos status forbidden en esta ruta
+        uri: http://localhost:9999/
+        predicates:
+        - Path=/v1/todayJsonParameterized
+        filters:
+        - SetStatus=403
+
+      - id: retry_test #Intentos de reconectar (finalmente devuelve el 502 a front)
+        uri: http://localhost:9999/
+        predicates:
+        - Path=/v1/badGatewayTest
+        filters:
+        - RedirectTo=302, http://localhost:7777/v1/badGatewayTest
+        - name: Retry
+          args:
+            retries: 3
+            statuses: BAD_GATEWAY
+            methods: GET,POST
+            backoff:
+              firstBackoff: 10ms
+              maxBackoff: 50ms
+              factor: 2
+              basedOnPreviousValue: false

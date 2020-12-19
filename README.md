@@ -12,6 +12,7 @@ Sample Modules:
 - [Spring Boot Zuul Load Balancing](spring-boot-zuul-load-balancing/README.md)
 - [Spring Boot Security Oauth](spring-boot-security-oauth/README.md)
 - [Spring Boot Docker](spring-boot-docker/README.md)
+- [Spring Boot JWT](spring-boot-jwt/README.md)
 
 Utils:
 JacksonMapper
