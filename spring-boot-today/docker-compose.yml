@@ -1,10 +1,10 @@
 version: "3"
 
 services:
-  todayservice:
+  todayservice_instance_one:
     build: today-service
     image: spring-boot-training-today
-    container_name: springboottrainingdockertoday
+    container_name: springboottrainingdockertoday_instance_one
     restart: "no"
     ports:
       - "7080:7777"
@@ -15,3 +15,60 @@ services:
       options:
         max-size: "100k"
         max-file: "10"
+
+  todayservice_instance_two:
+    build: today-service
+    image: spring-boot-training-today
+    container_name: springboottrainingdockertoday_instance_two
+    restart: "no"
+    ports:
+      - "7081:7777"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
+  todayservice_instance_three:
+    build: today-service
+    image: spring-boot-training-today
+    container_name: springboottrainingdockertoday_instance_three
+    restart: "no"
+    ports:
+      - "7082:7777"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
+  todayservice_instance_four:
+    build: today-service
+    image: spring-boot-training-today
+    container_name: springboottrainingdockertoday_instance_four
+    restart: "no"
+    ports:
+      - "7083:7777"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
+  portainer:
+    container_name: portainer-today
+    image: portainer/portainer
+    ports:
+      - "9500:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:

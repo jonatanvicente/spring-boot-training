@@ -35,4 +35,6 @@ include 'spring-boot-jwt'
 include 'spring-boot-resilience4j'
 include 'spring-boot-registry:eureka-another-client'
 findProject(':spring-boot-registry:eureka-another-client')?.name = 'eureka-another-client'
+include 'spring-boot-today:eureka'
+findProject(':spring-boot-today:eureka')?.name = 'eureka'
 
