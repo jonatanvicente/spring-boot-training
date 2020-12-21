@@ -32,6 +32,16 @@ To run this example:
 ./gradlew :spring-boot-registry:eureka-client:bootRun
 ```
 
+## Eureka Another Client
+
+To run this example:
++ Generate Gradle wrapper (parent directory)
++ Execute with command (from parent directory):
+
+```
+./gradlew :spring-boot-registry:eureka-another-client:bootRun
+```
+
 
 ## Endpoints
 
@@ -72,3 +82,5 @@ application.properties.
 + URL's de Actuator disponibles (JMX y endpoint)
 + Config en application.yml
 + Logs personalizados con logback.xml
++ Se ha añadido otro microservicio, cuya información es visible desde el micro eureka-client (consulta por nombre en 
+http://localhost:8080/service-instances/another-client)

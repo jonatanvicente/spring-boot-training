@@ -52,9 +52,9 @@ public class TodayController {
 
     /**
      * Input Format example:
-     *      {
-     *     "pattern": "dd/MM/yyyy HH:mm:ss"
-     *      }
+         *      {
+         *     "pattern": "dd/MM/yyyy HH:mm:ss"
+         *      }
      * @param pattern
      * @return
      */

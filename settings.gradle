@@ -33,4 +33,6 @@ include 'spring-boot-today:fail-service'
 findProject(':spring-boot-today:fail-service')?.name = 'fail-service'
 include 'spring-boot-jwt'
 include 'spring-boot-resilience4j'
+include 'spring-boot-registry:eureka-another-client'
+findProject(':spring-boot-registry:eureka-another-client')?.name = 'eureka-another-client'
 
