@@ -73,9 +73,11 @@ docker-compose -f docker-compose.yml up
     - resilience4j.thread-pool-bulkhead
     - resilience4j.ratelimiter (limitador velocidad)
     - resilience4j.timelimiter
-    
-+ BackendAService. Resilience4j annotations.
-+ CircuitBreakerTest. 
+ 
++ Contexto de tests Spring + jerarquía de tests: ejecución de Tests completos con SpringBootTest (levanta contexto 
+completo, no necesario levantar microservices + ejecución de tests)
++ BackendAService. Resilience4j annotations
++ CircuitBreakerTest
 + RetryTest
 
 ##### Comparativa Hystrix / Resilience4j

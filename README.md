@@ -1,6 +1,10 @@
 
 ## Spring Boot Training
 
+Environment:
++ JDK 8 (some later versions of Java not supported yet).
+
+
 Sample Modules:
 - [Spring Boot Initial](spring-boot-initial/README.md)
 - [Spring Boot One-To-One](spring-boot-one-to-one/README.md)
