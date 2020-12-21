@@ -10,8 +10,8 @@ Sample Modules:
 - [Spring Boot Registry](spring-boot-registry/README.md)
 - [Spring Boot Routing Filtering](spring-boot-routing-filtering/README.md)
 - [Spring Boot Zuul Load Balancing](spring-boot-zuul-load-balancing/README.md)
-- [Spring Boot Security Oauth](spring-boot-security-oauth/README.md)
 - [Spring Boot Docker](spring-boot-docker/README.md)
+- [Spring Boot Resilience4j](spring-boot-resilience4j/README.md)
 - [Spring Boot JWT](spring-boot-jwt/README.md)
 
 Utils:

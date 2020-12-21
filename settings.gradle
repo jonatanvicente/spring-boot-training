@@ -32,4 +32,5 @@ findProject(':spring-boot-today:today-service')?.name = 'today-service'
 include 'spring-boot-today:fail-service'
 findProject(':spring-boot-today:fail-service')?.name = 'fail-service'
 include 'spring-boot-jwt'
+include 'spring-boot-resilience4j'
 
