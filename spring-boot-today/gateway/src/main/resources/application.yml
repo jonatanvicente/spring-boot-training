@@ -25,26 +25,26 @@ spring:
         response-timeout: 2s
       routes:
       - id: path_today_simple #Redirección
-        uri: http://localhost:9999/
+        uri: http://gatewayservice:9999
         predicates:
         - Path=/v1/today
         filters:
-        - RedirectTo=302, http://localhost:8762/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
+        - RedirectTo=302, http://zuulservice:8762/spring-today-service/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
         # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
 
       - id: path_json_parameterized #Fijamos status forbidden en esta ruta
-        uri: http://localhost:9999/
+        uri: http://gatewayservice:9999
         predicates:
         - Path=/v1/todayJsonParameterized
         filters:
         - SetStatus=403
 
       - id: retry_test #Intentos de reconectar (finalmente devuelve el 502 a front)
-        uri: http://localhost:9999/
+        uri: http://gatewayservice:9999
         predicates:
         - Path=/v1/badGatewayTest
         filters:
-        - RedirectTo=302, http://localhost:8762/v1/badGatewayTest
+        - RedirectTo=302, http://zuulservice:8762/v1/badGatewayTest
         - name: Retry
           args:
             retries: 3
