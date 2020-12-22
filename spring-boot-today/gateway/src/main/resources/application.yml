@@ -29,7 +29,7 @@ spring:
         predicates:
         - Path=/v1/today
         filters:
-        - RedirectTo=302, http://localhost:8888/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
+        - RedirectTo=302, http://localhost:8762/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
         # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
 
       - id: path_json_parameterized #Fijamos status forbidden en esta ruta
@@ -44,7 +44,7 @@ spring:
         predicates:
         - Path=/v1/badGatewayTest
         filters:
-        - RedirectTo=302, http://localhost:7777/v1/badGatewayTest
+        - RedirectTo=302, http://localhost:8762/v1/badGatewayTest
         - name: Retry
           args:
             retries: 3
