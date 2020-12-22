@@ -6,6 +6,14 @@ logging:
 server:
   port: 9999
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaservice:8761/eureka
+      #defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} #sin docker
+  instance:
+    preferIpAddress: true
+
 #Ejercicio: añadimos filtrado de rutas para permitir sólo salida en Json
 spring:
   application:

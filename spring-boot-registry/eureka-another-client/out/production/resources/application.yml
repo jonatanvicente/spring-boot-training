@@ -1,11 +1,11 @@
 spring:
   application:
-    name: spring-cloud-eureka-client
+    name: another-client
   jmx:
     enabled: true
 
 server:
-  port: 8084 #cambiar en ejemplo a 8082 y 8083 para nuevas instancias
+  port: 8081
 
 eureka:
   client:

@@ -17,6 +17,14 @@ services:
     ports:
       - "8762:8762"
 
+  gatewayservice:
+    build: gateway
+    image: spring-boot-training-today-gateway
+    container_name: springboottrainingdockertoday_gateway
+    restart: "no"
+    ports:
+      - "9999:9999"
+
   todayservice_instance_one:
     build: today-service
     image: spring-boot-training-today

@@ -47,3 +47,10 @@ spring:
               maxBackoff: 50ms
               factor: 2
               basedOnPreviousValue: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaservice:8761/eureka  #docker service
+  instance:
+    preferIpAddress: true
