@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+  eurekaservice:
+    build: eureka
+    image: spring-boot-training-today-eureka
+    container_name: springboottrainingdockertoday_eureka
+    restart: "no"
+    ports:
+      - "8761:8761"
+
   todayservice_instance_one:
     build: today-service
     image: spring-boot-training-today
@@ -60,6 +68,37 @@ services:
       options:
         max-size: "100k"
         max-file: "10"
+
+  failservice_instance_one:
+    build: fail-service
+    image: spring-boot-training-today-fail
+    container_name: springboottrainingdockertodayfail_instance_one
+    restart: "no"
+    ports:
+      - "8888:8888"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
+  failservice_instance_two:
+    build: fail-service
+    image: spring-boot-training-today-fail
+    container_name: springboottrainingdockertodayfail_instance_two
+    restart: "no"
+    ports:
+      - "8889:8888"
+    environment:
+      - "JAVA_OPTS=-Xms128m -Xmx512m -server"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "10"
+
 
   portainer:
     container_name: portainer-today

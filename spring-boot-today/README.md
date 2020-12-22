@@ -1,4 +1,14 @@
 
+
+
++ Build del proyecto (código del microservicio)
+```
+./gradlew :spring-boot-today:today-service:build
+docker build --tag=spring-boot-training-today .
+docker-compose up
+```
+
+
 + Portainer:
     - http:<nolink>//localhost:9500. User admin / K99ARjL5vFvpW7Ba
 
