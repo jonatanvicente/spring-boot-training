@@ -7,7 +7,7 @@ services:
     container_name: springboottrainingdockertoday_eureka
     restart: "no"
     ports:
-      - "8761:8761"
+      - "8761:8761"# eliminar uno para impedir acceso desde fuera
 
   zuulservice:
     build: zuul-server
