@@ -9,6 +9,14 @@ services:
     ports:
       - "8761:8761"
 
+  zuulservice:
+    build: zuul-server
+    image: spring-boot-training-today-zuul
+    container_name: springboottrainingdockertoday_zuul
+    restart: "no"
+    ports:
+      - "8762:8762"
+
   todayservice_instance_one:
     build: today-service
     image: spring-boot-training-today
