@@ -26,18 +26,18 @@ spring:
       routes:
       - id: path_today_simple #Redirección
         predicates:
-        - Path=/v1/today/** #no detecta
+        - Path=/v1/**
         # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
         filters:
-        - RedirectTo=302, http://zuulservice:8762/spring-today-service/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
-        #uri: http://gatewayservice:9999 # destino
+        - RedirectTo=302, lb://spring-fail-service/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
+        uri: lb://spring-fail-service/v1/fail
 
       - id: path_json_parameterized #Fijamos status forbidden en esta ruta
-        #uri: http://gatewayservice:9999
         predicates:
-        - Path=**/v1/todayJsonParameterized
+        - Path=/v1/todayJsonParameterized
         filters:
         - SetStatus=403
+        #uri: http://gatewayservice:9999
 
       - id: retry_test #Intentos de reconectar (finalmente devuelve el 502 a front)
         uri: http://gatewayservice:9999 #destino

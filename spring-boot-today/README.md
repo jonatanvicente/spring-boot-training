@@ -4,7 +4,7 @@
 Estado y comportamiento:
 + Actualmente se puede probar el balanceo de carga desarrollado sin Docker
 + Para la ejecución completa con Docker, es necesario parametrizar las url del registry de cada microservicio 
-(application.yml o bien .properties)
+(application.yml o bien .properties) - CON ZUUL LLEGA BIEN, NO CON GATEWAY
 + Revisar [Rutas en Gateway](gateway/src/main/resources/application.yml)
 
 
@@ -14,6 +14,8 @@ Estado y comportamiento:
 ![Diagrama](img/diagram.png)
 
 #### Notas Útiles
+
++ Ejecución completa del entorno: <b>docker-compose up</b> (levanta todos los containers)
 
 + Build del proyecto (compilación del microservicio + construcción imagen)
 
