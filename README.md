@@ -20,3 +20,10 @@ Sample Modules:
 
 Utils:
 JacksonMapper
+
+Notas TODO:
++ Netflix Ribbon tiene sus días contados (como muchos otros microservicios de Stack Netflix).
++ Spring Cloud ofrece como alternativa el módulo LoadBalancer. Véase https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer
+    + Hasta ahora el ejemplo spring-boot-today no hace que funcione bien la gateway. No hace las redirecciones (funcionando con Docker)
+    + Necesario modificarla. Embeberle Zuul (añadida annotation) y ponerle load balancing.
++ Otra posibilidad en https://dzone.com/articles/create-an-api-gateway-with-load-balancer-in-java

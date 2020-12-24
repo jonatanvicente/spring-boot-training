@@ -4,7 +4,7 @@
 Estado y comportamiento:
 + Actualmente se puede probar el balanceo de carga desarrollado sin Docker
 + Para la ejecución completa con Docker, es necesario parametrizar las url del registry de cada microservicio 
-(application.yml o bien .properties) - CON ZUUL LLEGA BIEN, NO CON GATEWAY
+(application.yml o bien .properties) - CON ZUUL LLEGA BIEN, NO CON GATEWAY. VER README GENERAL.
 + Revisar [Rutas en Gateway](gateway/src/main/resources/application.yml)
 
 
