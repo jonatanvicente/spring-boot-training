@@ -19,7 +19,7 @@ Sample Modules:
 - [Spring Boot JWT](spring-boot-jwt/README.md)
 
 Utils:
-JacksonMapper
+JacksonMapper (see https://www.baeldung.com/jackson)
 
 Notas TODO:
 + Netflix Ribbon tiene sus días contados (como muchos otros microservicios de Stack Netflix).
