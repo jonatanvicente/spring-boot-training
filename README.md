@@ -2,7 +2,7 @@
 ## Spring Boot Training
 
 Environment:
-+ JDK 8 (some later versions of Java not supported yet).
++ JDK 15
 
 
 Sample Modules:

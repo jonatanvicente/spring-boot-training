@@ -29,7 +29,7 @@ spring:
         - Path=/v1/**
         # Múltiples filtros para añadir/modificar cabeceras, rewrite Path, etc
         filters:
-        - RedirectTo=302, lb://spring-fail-service/v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
+        - RedirectTo=302, lb://v1/fail #Format: HTTP Status 302 (Redirect) / newLocation
         uri: lb://spring-fail-service/v1/fail
 
       - id: path_json_parameterized #Fijamos status forbidden en esta ruta
