@@ -41,6 +41,8 @@ docker-compose up [nombreContainer]
     - Directo al microservicio
         - http://[IP_DOCKER]:7777/v1/today
         - http://[IP_DOCKER]:7777/v1/todayJson
+    - Fail (directo)
+        - http://localhost:8888/v1/fail   
     
     
 #### Highlights

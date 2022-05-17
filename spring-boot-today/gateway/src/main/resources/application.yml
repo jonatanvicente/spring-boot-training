@@ -9,8 +9,8 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eurekaservice:8761/eureka
-      #defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} #sin docker
+      #defaultZone: http://eurekaservice:8761/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} #sin docker
   instance:
     preferIpAddress: true
 
@@ -38,6 +38,7 @@ spring:
         filters:
         - SetStatus=403
         #uri: http://gatewayservice:9999
+        uri: lb://spring-fail-service/v1/fail
 
       - id: retry_test #Intentos de reconectar (finalmente devuelve el 502 a front)
         uri: http://gatewayservice:9999 #destino
